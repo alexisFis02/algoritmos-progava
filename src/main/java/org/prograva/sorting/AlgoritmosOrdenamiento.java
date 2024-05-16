@@ -1,4 +1,4 @@
-package org.prograva;
+package org.prograva.sorting;
 
 import java.util.*;
 
