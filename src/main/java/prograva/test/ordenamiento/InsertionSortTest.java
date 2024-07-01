@@ -1,9 +1,10 @@
-package org.example.test.ordenamiento;
+package prograva.test.ordenamiento;
 
-import org.example.ordenamiento.InsertionSort;
+import static prograva.test.ordenamiento.ordenamientoTestUtils.runSortTest;
+
 import org.junit.Test;
 
-import static org.example.test.ordenamiento.ordenamientoTestUtils.runSortTest;
+import prograva.ordenamiento.InsertionSort;
 
 public class InsertionSortTest {
 

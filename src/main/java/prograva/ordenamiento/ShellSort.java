@@ -1,4 +1,4 @@
-package org.example.ordenamiento;
+package prograva.ordenamiento;
 import java.util.Arrays;
 
 public class ShellSort extends AlgoritmoOrdenamiento{

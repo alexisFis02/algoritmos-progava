@@ -1,4 +1,4 @@
-package org.example.grafos;
+package prograva.grafos;
 
 import java.sql.SQLOutput;
 import java.util.Comparator;

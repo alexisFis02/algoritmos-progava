@@ -1,9 +1,10 @@
-package org.example.test.ordenamiento;
+package prograva.test.ordenamiento;
 
-import org.example.ordenamiento.ShellSort;
+import static prograva.test.ordenamiento.ordenamientoTestUtils.runSortTest;
+
 import org.junit.Test;
 
-import static org.example.test.ordenamiento.ordenamientoTestUtils.runSortTest;
+import prograva.ordenamiento.ShellSort;
 
 public class ShellSortTest {
 

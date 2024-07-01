@@ -1,4 +1,4 @@
-package org.example.ordenamiento;
+package prograva.ordenamiento;
 
 public class BubbleSort extends AlgoritmoOrdenamiento {
 

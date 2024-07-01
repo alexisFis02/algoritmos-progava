@@ -1,4 +1,4 @@
-package org.example.grafos;
+package prograva.grafos;
 
 public class Arista {
     int destino;

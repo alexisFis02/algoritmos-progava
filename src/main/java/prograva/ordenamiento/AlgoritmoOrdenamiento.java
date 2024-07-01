@@ -1,4 +1,4 @@
-package org.example.ordenamiento;
+package prograva.ordenamiento;
 
 public abstract class AlgoritmoOrdenamiento {
     abstract public void sort(int[] a);
