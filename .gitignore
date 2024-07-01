@@ -36,8 +36,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/.idea/
 
 
 ### Custom
 /bin
+/.idea/
+
