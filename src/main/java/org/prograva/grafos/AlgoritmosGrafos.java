@@ -1,4 +1,4 @@
-package org.example;
+package org.prograva.grafos;
 
 import java.util.*;
 

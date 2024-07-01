@@ -1,4 +1,4 @@
-package org.example;
+package org.prograva.grafos;
 
 public class NodoPeso {
     int nodo;
