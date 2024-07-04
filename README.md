@@ -11,8 +11,8 @@ Castillo Alexis, 43991136  [Foto](https://upload.wikimedia.org/wikipedia/commons
 Rosano Matias, 43570765 [Foto](https://pbs.twimg.com/profile_images/102914807/ivar_400x400.jpg)
 
 ## Uso
-En el main, se puede correr la funcion OrdenamientoStats.mostrarEstadisticasOrdenamiento() que probara todos los algoritmos de ordenamiento.
-El mismo generara array de datos aleatorios y los probara con cada algoritmo, imprimiendo a la vez, el tiempo promedio que le tomo ordenar el conjunto de datos al algoritmo actual.
+En el main, se puede encontrar un objeto con su metodo correspondiente para iniciar la GUI.
+Se encuentra de manera explicitas las opciones para ejecutar ordenamientos, dijkstra y DFS/BFS con datos precargados.
 
 ## Contenido
 
