@@ -40,4 +40,5 @@ build/
 ### Custom
 /.idea/
 /bin
+out/
 >>>>>>> busquedas

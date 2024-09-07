@@ -1,9 +1,8 @@
 package prograva.test.dojo;
 
 import org.junit.Test;
-
+import prograva.dojo.CC2SumaDeElementosDeArray;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class CC2SumaDeElementosDeArrayTest {

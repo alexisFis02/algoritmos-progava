@@ -1,4 +1,4 @@
-package org.practica;
+package prograva.dojo;
 
 import java.util.List;
 
