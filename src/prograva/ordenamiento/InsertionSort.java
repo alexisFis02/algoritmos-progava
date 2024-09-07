@@ -1,20 +1,18 @@
 package prograva.ordenamiento;
 
-public class InsertionSort extends AlgoritmoOrdenamiento {
+public class InsertionSort<T extends Comparable<T>> extends AlgoritmoOrdenamiento<T> {
+
     @Override
-    public void sort(int[] a) {
-        int i, j;
-        int act;
-        for (i = 1; i < a.length; i++) {
-            act = a[i];
-            for (j = i; j >= 0; j--) { // itero desde el indice del actual hasta el inicio
-                if (j == 0 || act > a[j - 1]) { // si el actual es mayor al anterior lo inserto
-                    a[j] = act;
-                    break;
-                } else { // sino se desplaza el anterior hacia delante
-                    a[j] = a[j - 1];
-                }
+    public void sort(T[] a) {
+        int j,n = a.length;
+        for (int i = 1; i < n; i++) {
+            T current = a[i];
+            j = i;
+            while (j > 0 && current.compareTo(a[j - 1]) < 0) {
+                a[j] = a[j - 1];
+                j--;
             }
+            a[j] = current;
         }
     }
 }

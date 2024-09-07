@@ -10,6 +10,6 @@ public class QuickSortTest {
 
     @Test
     public void testQuickSortArraysAleatorios() {
-        runSortTest(new QuickSort(), 1000, 100);
+        runSortTest(new QuickSort<>(), 1000, 100);
     }
 }

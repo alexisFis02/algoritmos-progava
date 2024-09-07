@@ -1,44 +1,42 @@
 package prograva.ordenamiento;
+
 import java.util.Arrays;
 
-public class ShellSort extends AlgoritmoOrdenamiento{
+public class ShellSort<T extends Comparable<T>> extends AlgoritmoOrdenamiento<T> {
+
     /*
-     * Insersion interativa sobre elementos que distan un valor de la serie de shell
-     * */
+     * Inserción iterativa sobre elementos que distan un valor de la serie de Shell
+     */
     @Override
-    public void sort(int[] a) { // TODO: revisar complejiodad
+    public void sort(T[] a) { // TODO: revisar complejidad
         int[] serieShell = getSerieShell(a.length);
-        int i,j,k,act,shell,elementos,l;
+        int i, j, k, shell;
 
-        for(i = serieShell.length-1; i>=0; --i){ // itero sobre la serie de shell
-            shell = serieShell[i]; // valor de la serie
+        for (i = serieShell.length - 1; i >= 0; --i) { // Itero sobre la serie de Shell
+            shell = serieShell[i]; // Valor de la serie
 
-            elementos = a.length-shell+1; // cantidad de elementos que distan shell en el array
+            for (int l = 0; l < shell; l++) { // Todos los elementos que distan shell están continuos
 
-            for(l = 0 ; l < elementos; l++) { // todos los elementos que distan shell estan continuos
-
-                // seleccion sobre el subarray que distan shell
-                for (j = l; j < a.length; j += shell) {
-                    act = a[j];
-                    for (k = j; k >= 0; k -= shell) { // itero desde el indice del actual hasta el inicio
-                        if (k == l || act > a[k - shell]) { // si el actual es mayor al anterior lo inserto
-                            a[k] = act;
-                            break;
-                        } else { // sino se desplaza el anterior hacia delante
-                            a[k] = a[k - serieShell[i]];
-                        }
+                // Selección sobre el subarray que distan shell
+                for (j = l + shell; j < a.length; j += shell) {
+                    T act = a[j];
+                    k = j;
+                    while (k >= shell && act.compareTo(a[k - shell]) < 0) { // Itero desde el índice del actual hasta el inicio
+                        a[k] = a[k - shell];
+                        k -= shell;
                     }
+                    a[k] = act;
                 }
             }
         }
     }
 
-    public static int[] getSerieShell(int n){
+    public static int[] getSerieShell(int n) {
         int[] ret = new int[n];
         ret[0] = 1;
         int i = 0;
-        while(ret[i] < n ){
-            ret[i+1] = ret[i] * 3+1;
+        while (ret[i] < n - 1) {
+            ret[i + 1] = ret[i] * 3 + 1;
             ++i;
         }
         return Arrays.copyOfRange(ret, 0, i);

@@ -10,6 +10,6 @@ public class SelectionSortTest {
 
     @Test
     public void testSelectionSortArraysAleatorios() {
-        runSortTest(new SelectionSort(), 1000, 100);
+        runSortTest(new SelectionSort<>(), 1000, 100);
     }
 }

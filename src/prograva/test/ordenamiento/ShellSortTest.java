@@ -10,6 +10,7 @@ public class ShellSortTest {
 
     @Test
     public void testShellSortArraysAletorios() {
-        runSortTest(new ShellSort(), 1000, 100);
+
+        runSortTest(new ShellSort<>(), 1000, 100);
     }
 }

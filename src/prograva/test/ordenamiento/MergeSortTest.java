@@ -11,6 +11,6 @@ public class MergeSortTest {
 
     @Test
     public void testMergeSortArraysAleatorios() {
-        runSortTest(new MergeSort(), 1000, 100);
+        runSortTest(new MergeSort<>(), 1000, 100);
     }
 }

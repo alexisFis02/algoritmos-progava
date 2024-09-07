@@ -10,6 +10,6 @@ public class BubbleSortTest {
 
     @Test
     public void testBubbleSortArraysAleatorios() {
-        runSortTest(new BubbleSort(), 1000, 100);
+        runSortTest(new BubbleSort<>(), 1000, 100);
     }
 }

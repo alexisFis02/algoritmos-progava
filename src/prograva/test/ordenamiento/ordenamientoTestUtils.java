@@ -5,19 +5,20 @@ import java.util.Arrays;
 import prograva.ordenamiento.AlgoritmoOrdenamiento;
 import prograva.ordenamiento.OrdenamientoStats;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ordenamientoTestUtils {
 
-    public static void runSortTest(AlgoritmoOrdenamiento algoritmo, int numberOfTests, int maxArraySize) {
+    public static void runSortTest(AlgoritmoOrdenamiento<Integer> algoritmo, int numberOfTests, int maxArraySize) {
         for (int t = 0; t < numberOfTests; t++) {
-            int[] array = OrdenamientoStats.generarArrayAleatorio(maxArraySize);
-            int[] arrayCopy = array.clone();
+            Integer[] array = OrdenamientoStats.generarArrayAleatorio(maxArraySize);
+            Integer[] arrayCopy = array.clone();
 
             algoritmo.sort(array);
             Arrays.sort(arrayCopy);
 
-            assertTrue(Arrays.equals(array, arrayCopy));
+            assertArrayEquals(array, arrayCopy);
         }
     }
 

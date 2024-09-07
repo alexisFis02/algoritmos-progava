@@ -1,11 +1,11 @@
 package prograva.ordenamiento;
 
-public abstract class AlgoritmoOrdenamiento {
-    abstract public void sort(int[] a);
+public abstract class AlgoritmoOrdenamiento<T extends Comparable<T>>{
+    abstract public void sort(T[] array);
 
-    static void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+    static <T> void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }

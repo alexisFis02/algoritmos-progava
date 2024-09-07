@@ -3,23 +3,28 @@ package prograva.ordenamiento;
 import java.util.Random;
 
 public class OrdenamientoStats {
-	public static void mostrarEstadisticasOrdenamiento() {
-        int numberOfTests = 10;  // Número de pruebas a realizar
+
+    public static void mostrarEstadisticasOrdenamiento() {
+        int numberOfTests = 15;  // Número de pruebas a realizar
         int maxArraySize = 10000; // Tamaño máximo del array
 
-        AlgoritmoOrdenamiento[] algoritmos = {
-                new BubbleSort(),
-                new InsertionSort(),
-                new MergeSort(),
-                new QuickSort(),
-                new SelectionSort(),
-                new ShellSort()
+        System.out.println("Cantidad de elementos maxima por array: " + maxArraySize +1
+
+                " ,Cantidad de tests efectuados por algoritmo: " + numberOfTests);
+
+        AlgoritmoOrdenamiento<Integer>[] algoritmos = new AlgoritmoOrdenamiento[]{
+                new BubbleSort<>(),
+                new InsertionSort<>(),
+                new MergeSort<>(),
+                new QuickSort<>(),
+                new SelectionSort<>(),
+                new ShellSort<>()
         };
 
-        for (AlgoritmoOrdenamiento algoritmo : algoritmos) {
+        for (AlgoritmoOrdenamiento<Integer> algoritmo : algoritmos) {
             long totalTime = 0;
             for (int t = 0; t < numberOfTests; t++) {
-                int[] array = generarArrayAleatorio(maxArraySize);
+                Integer[] array = generarArrayAleatorio(maxArraySize);
 
                 long startTime = System.nanoTime();
                 algoritmo.sort(array);
@@ -28,15 +33,15 @@ public class OrdenamientoStats {
 
                 totalTime += duration;
             }
-            double avgTimeMs = ( totalTime / numberOfTests ) / 1_000_000;
+            double avgTimeMs = (double) (totalTime / numberOfTests) / 1_000_000;
             System.out.printf("%s tiempo promedio: %.2f ms%n", algoritmo.getClass().getSimpleName(), avgTimeMs);
         }
     }
 
-    public static int[] generarArrayAleatorio(int maxArraySize) {
+    public static Integer[] generarArrayAleatorio(int maxArraySize) {
         Random random = new Random();
         int arraySize = random.nextInt(maxArraySize) + 1;
-        int[] array = new int[arraySize];
+        Integer[] array = new Integer[arraySize];
 
         for (int i = 0; i < arraySize; i++) {
             array[i] = random.nextInt(1000); // Valores aleatorios entre 0 y 999

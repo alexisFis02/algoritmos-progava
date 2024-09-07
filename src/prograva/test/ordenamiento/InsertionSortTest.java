@@ -10,7 +10,7 @@ public class InsertionSortTest {
 
     @Test
     public void testInsertionSortArraysAleatorios() {
-        runSortTest(new InsertionSort(), 1000, 100);
+        runSortTest(new InsertionSort<>(), 1000, 100);
     }
 
 }

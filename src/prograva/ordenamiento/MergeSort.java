@@ -2,29 +2,41 @@ package prograva.ordenamiento;
 
 import java.util.Arrays;
 
-public class MergeSort extends AlgoritmoOrdenamiento{
+public class MergeSort<T extends Comparable<T>> extends AlgoritmoOrdenamiento<T>{
 
     @Override
-    public void sort(int[] a) {
-        if (a.length <= 1) return;
+    public void sort(T[] a) {
+        if (a.length <= 1)
+            return;
         int mid = a.length / 2;
-        int[] arrayIzq = Arrays.copyOfRange(a, 0, mid);
-        int[] arrayDer = Arrays.copyOfRange(a, mid, a.length);
+
+        T[] arrayIzq = Arrays.copyOfRange(a, 0, mid);
+        T[] arrayDer = Arrays.copyOfRange(a, mid, a.length);
+
         sort(arrayIzq);
         sort(arrayDer);
-        int[] ordenado = merge(arrayIzq, arrayDer);
+
+        T[] ordenado = merge(arrayIzq, arrayDer);
+
         System.arraycopy(ordenado, 0, a, 0, a.length);
     }
 
     /*
      * Fuciona los dos arrays ordenados en un unico array ordenado
      * */
-    public static int[] merge(int[] l,int[] r) {
-        int[] ret = new int[ l.length + r.length ];
+    private T[] merge(T[] izq, T[] der) {
         int i = 0,j = 0,k = 0;
-        while( i < l.length && j < r.length) ret[k++] = ( l[i] <= r[j] ) ? l[i++] : r[j++];
-        while ( i < l.length ) ret[k++] = l[i++];
-        while ( j < r.length) ret[k++] = r[j++];
+
+        T[] ret = Arrays.copyOf(izq, izq.length + der.length);
+
+        while( i < izq.length && j < der.length)
+            ret[k++] = ( izq[i].compareTo(der[j]) <= 0) ? izq[i++] : der[j++];
+
+        while ( i < izq.length )
+            ret[k++] = izq[i++];
+        while ( j < der.length)
+            ret[k++] = der[j++];
+
         return ret;
     }
 }
