@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import prograva.grafos.AlgoritmosGrafos;
-import prograva.grafos.NodoPeso;
+import prograva.grafos.*;
 import prograva.ordenamiento.OrdenamientoStats;
 
 public class MenuGUI {
@@ -89,12 +88,21 @@ public class MenuGUI {
 	}
 	
 	private void opcionDijkstra() {
-		Map<Integer, List<NodoPeso>> grafoPeso = new HashMap<>();
-        grafoPeso.put(0, Arrays.asList(new NodoPeso(1, 4), new NodoPeso(2, 1)));
-        grafoPeso.put(1, Arrays.asList(new NodoPeso(3, 1)));
-        grafoPeso.put(2, Arrays.asList(new NodoPeso(1, 2), new NodoPeso(3, 5)));
-        grafoPeso.put(3, Arrays.asList());
+		Grafo grafo = new GrafoLista(4);
 
-        AlgoritmosGrafos.algoritmoDjikstra(grafoPeso, 0);
+		grafo.insertarArista(0, 1, 7.0);
+		grafo.insertarArista(0, 2, 3.0);
+
+		grafo.insertarArista(1, 3, 2.0);
+
+		grafo.insertarArista(2, 1, 2.0);
+		grafo.insertarArista(2, 3, 8.0);
+
+
+        double[] distancias = Dijkstra.dijkstra(grafo, 0);
+		System.out.println("Dijkstra desde el nodo 0:");
+		for (int i = 0; i < distancias.length; i++) {
+			System.out.println("Nodo " + i + " - Distancia: " + distancias[i]);
+		}
 	}
 }

@@ -8,9 +8,7 @@ public class OrdenamientoStats {
         int numberOfTests = 15;  // Número de pruebas a realizar
         int maxArraySize = 10000; // Tamaño máximo del array
 
-        System.out.println("Cantidad de elementos maxima por array: " + maxArraySize +1
-
-                " ,Cantidad de tests efectuados por algoritmo: " + numberOfTests);
+        System.out.println("Cantidad de elementos maxima por array: " + maxArraySize +1 +" ,Cantidad de tests efectuados por algoritmo: " + numberOfTests);
 
         AlgoritmoOrdenamiento<Integer>[] algoritmos = new AlgoritmoOrdenamiento[]{
                 new BubbleSort<>(),
